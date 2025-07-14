@@ -28,35 +28,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer    {
         // For example, messages sent to "/app/sendMessage" will be handled by the ChatController
         registry.setApplicationDestinationPrefixes("/app");
 
-
-
-
-        // registry.setUserDestinationPrefix("/user");
-        // // This prefix is used for user-specific destinations
-        // // For example, messages sent to "/user/{username}/queue/messages" will be routed to a specific user
-        // // This is useful for private messages or notifications
-        // registry.setPreservePublishOrder(true);
-        // // This ensures that messages are processed in the order they are received
-        // registry.setPreservePublishOrder(true);
-        // // This is useful for maintaining the order of messages in a chat application
-        // registry.setHeartbeatValue(new long[]{10000, 10000});
-        // // This sets the heartbeat interval for WebSocket connections
-        // // It helps to keep the connection alive and detect disconnections
-        // registry.setAutoStartup(true);
-        // // This enables the automatic startup of the WebSocket message broker
-        // registry.setTaskScheduler(new DefaultHeartbeatScheduler());
-        // // This sets a custom task scheduler for handling heartbeats
-        // registry.setUserDestinationTimeout(10000);
-        // // This sets the timeout for user destination messages
-        // registry.setPreservePublishOrder(true);
-        // // This ensures that messages sent to user destinations are processed in the order they are received
-
     }
 
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chats").setAllowedOrigins("http://localhost:8080").withSockJS();
+        registry.addEndpoint("/chat").setAllowedOrigins("http://localhost:8080").withSockJS();
     }
     
 
