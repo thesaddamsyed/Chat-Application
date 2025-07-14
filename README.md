@@ -28,7 +28,7 @@ This is a simple real-time chat application built with Spring Boot, WebSocket (S
 1. Clone the repository:
    ```sh
    git clone https://github.com/thesaddamsyed/Chat-Application.git
-   cd your-repo
+   cd Chat-Application
    ```
 2. Build and run the app:
    ```sh
