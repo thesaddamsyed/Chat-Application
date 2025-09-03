@@ -2,7 +2,7 @@
 
 A beautiful, responsive real-time chat application built with Spring Boot and modern web technologies. Features a sleek UI with gradient backgrounds, user avatars, timestamps, and real-time messaging capabilities.
 
-![Chat App Demo](./src/main/resources/images/demo.png)
+![Chat App Demo](./src/main/resources/images/desktop.png)
 
 ##  Features
 
