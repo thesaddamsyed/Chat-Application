@@ -1,0 +1,15 @@
+# Maven build output
+target/
+
+# VCS
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db 
