@@ -1,16 +1,24 @@
-# Use a lightweight Java 17 runtime
+# -------- Stage 1: Build the application --------
+FROM maven:3.9-eclipse-temurin-17 AS builder
+
+WORKDIR /workspace
+
+# Copy pom and source
+COPY pom.xml ./
+COPY src ./src
+
+# Build the application (skip tests for faster build)
+RUN mvn -q -e -DskipTests clean package
+
+# -------- Stage 2: Runtime image --------
 FROM eclipse-temurin:17-jre
 
-# Set workdir
 WORKDIR /app
 
-# Copy the built jar from the target folder
-# The jar name should match your artifact/version
-COPY target/app-0.0.1-SNAPSHOT.jar app.jar
+# Copy built jar from the builder stage
+COPY --from=builder /workspace/target/app-0.0.1-SNAPSHOT.jar /app/app.jar
 
-# Environment and port
 ENV PORT=8080
 EXPOSE 8080
 
-# Run the application
 CMD ["java", "-jar", "/app/app.jar"] 
